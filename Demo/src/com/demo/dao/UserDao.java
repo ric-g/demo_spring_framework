@@ -61,6 +61,7 @@ public class UserDao extends HibernateDaoSupport implements IUserDao{
 	 * @see com.demo.dao.IUserDao#all()
 	 */
 	public List<User> all(){
+		log.debug("getting all users: ");
 		DetachedCriteria detachedCritera = DetachedCriteria.forClass(User.class);
 		return this.getHibernateTemplate().findByCriteria(detachedCritera);
 	}
